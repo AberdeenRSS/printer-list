@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>UOA Rocketry - Printers</title>
+    </head>
+    <body>
+        <h1>Printers</h1>
+        <ul>
+        {% for printer in printers %}
+          <li>
+            <a href="{{printer.url}}">
+              {{printer.name}}
+            </a> - {{printer.status}} {{ printer.last_updated}}
+          </li>
+        {% endfor %}
+        </ul>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>URL</th>
+                <th>Status</th>
+                <th>Last Updated</th>
+            </tr>
+            {% for printer in printers %}
+            <tr>
+                <td>{{ printer.name }}</td>
+                <td><a href='{{ printer.url }}'>Link</a>'</td>
+                <td>{{ printer.status }}</td>
+                <td>{{ printer.last_updated }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
