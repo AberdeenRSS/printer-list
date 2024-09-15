@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5001"
+    volumes:
+      - flask_app_data:/app/data
+    environment:
+      - PRODUCTION=true
+      - ACCESS_KEY=${ACCESS_KEY}
+    restart: unless-stopped
+
+volumes:
+  flask_app_data:
